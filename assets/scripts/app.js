@@ -5,6 +5,41 @@ let currentResults = defaultResult;
 //     const result = n1+n2;
 //     return result;
 // };
+function operation(operator){
+if(operator === "ADD"){
+    let enteredNum = parseInt(userInput.value);
+    let resultDesc = `${currentResults} + ${enteredNum}`;
+    report(operator,currentResults,currentResults+enteredNum);
+    currentResults = currentResults+enteredNum;
+    outputResult(currentResults,resultDesc);
+    console.log(logEntries);
+}
+else if(operator === "Subtract"){
+    let enteredNum = parseInt(userInput.value);
+    let resultDesc = `${currentResults} - ${enteredNum}`;
+    report(operator,currentResults,currentResults-enteredNum);
+    currentResults = currentResults-enteredNum;
+    outputResult(currentResults,resultDesc);
+    console.log(logEntries);
+}
+else if(operator === "Multiply"){
+    let enteredNum = parseInt(userInput.value);
+    let resultDesc = `${currentResults} * ${enteredNum}`;
+    report(operator,currentResults,currentResults*enteredNum);
+    currentResults = currentResults*enteredNum;
+    outputResult(currentResults,resultDesc);
+    console.log(logEntries);
+}
+else{
+    let enteredNum = parseInt(userInput.value);
+    let resultDesc = `${currentResults} / ${enteredNum}`;
+    report(operator,currentResults,currentResults/enteredNum);
+    currentResults = currentResults/enteredNum;
+    outputResult(currentResults,resultDesc);
+    console.log(logEntries);
+}
+
+}
 let logEntries = [] ;
 function report(operator,prevValue,newVal){
     let logEntry={
@@ -15,37 +50,17 @@ function report(operator,prevValue,newVal){
     logEntries.push(logEntry);
 }
 addBtn.addEventListener('click',()=>{
-    let enteredNum = parseInt(userInput.value);
-let resultDesc = `${currentResults} + ${enteredNum}`;
-report("ADD",currentResults,currentResults+enteredNum);
-currentResults = currentResults+enteredNum;
-outputResult(currentResults,resultDesc);
-console.log(logEntries);
+   operation("ADD");
 
 })
 subtractBtn.addEventListener('click',()=>{
-    let enteredNum = parseInt(userInput.value);
-let resultDesc = `${currentResults} - ${enteredNum}`
-report("Subtract",currentResults,currentResults+enteredNum);
-currentResults = currentResults-enteredNum;
-outputResult(currentResults,resultDesc);
-console.log(logEntries);
+   operation("Subtract");
 })
 divideBtn.addEventListener('click',()=>{
-    let enteredNum = parseInt(userInput.value);
-let resultDesc = `${currentResults} / ${enteredNum}`
-report("Divide",currentResults,currentResults+enteredNum);
-currentResults = currentResults/enteredNum;
-outputResult(currentResults,resultDesc);
-console.log(logEntries);
+    operation("Divide");
 })
 multiplyBtn.addEventListener('click',()=>{
-    let enteredNum = parseInt(userInput.value);
-let resultDesc = `${currentResults} * ${enteredNum}`
-report("Multiply",currentResults,currentResults+enteredNum);
-currentResults = currentResults*enteredNum;
-outputResult(currentResults,resultDesc);
-console.log(logEntries);
+ operation("Multiply");
 })
 
 
