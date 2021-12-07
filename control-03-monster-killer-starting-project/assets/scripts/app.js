@@ -7,6 +7,11 @@ const strongAttackValue = 25;
 const playerHealthValue = 16;
 let strength;
 let bonusLife = true;
+function reset(){
+   currentPlayerLife = choosenMaxLife;
+   currentMonsterLife = choosenMaxLife;
+   resetGame(choosenMaxLife);
+}
 function endRound(){
 
    const playerDamage = dealPlayerDamage(monsterAttackValue);
@@ -31,6 +36,13 @@ function endRound(){
      else if(currentPlayerLife<=0 && currentMonsterLife<=0){
       alert('draw')
       }
+
+   if(currentMonsterLife<=0 && currentPlayerLife>0 ||
+      currentPlayerLife<=0 && currentMonsterLife>0 ||
+      currentPlayerLife<=0 && currentMonsterLife<=0
+      ){
+reset();
+   }
 }
 function attack(mode){
 if(mode==="Strong"){
