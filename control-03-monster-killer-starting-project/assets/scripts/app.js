@@ -129,3 +129,6 @@ else{
 logBtn.addEventListener('click',()=>{
    console.log(gameLog);
 })
+
+var names = "Ali";
+
