@@ -7,19 +7,26 @@ const defaultVal = "ROCK";
 
 
 function selection(){
-    
-let tool = prompt("Choose paper,Rock or Scissors",'').toUpperCase;
+    gameRunning = true;
+    try {
+        let tool = prompt("Choose paper,Rock or Scissors",'').toUpperCase();
+
 if(tool !== paper &&
 tool !== rock &&
 tool !== scissors
 ){
-alert(`we have selected ${defaultVal} for you`);
+console.log(defaultVal);
 return defaultVal
     
 }
 else{
     return tool
 }
+    } catch (e) {
+        console.log("We have selected rock for you");
+        return defaultVal
+    }
+
 
 }
 const start =  ()=>{
@@ -30,7 +37,7 @@ const start =  ()=>{
    else{
     console.log("Starting......");
     let myTool = selection();
-    alert(myTool)
+    console.log(myTool);
    }
    
 }
