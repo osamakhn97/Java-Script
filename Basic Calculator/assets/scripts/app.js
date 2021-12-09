@@ -49,13 +49,10 @@ function report(operator,prevValue,newVal){
     }
     logEntries.push(logEntry);
 }
-addBtn.addEventListener('click',()=>{
-   operation("ADD");
 
-})
-subtractBtn.addEventListener('click',()=>{
-   operation("Subtract");
-})
+addBtn.addEventListener('click',operation.bind(this,"ADD"));
+subtractBtn.addEventListener('click',operation.bind(this,"Subtract"));
+
 divideBtn.addEventListener('click',()=>{
     operation("Divide");
 })
