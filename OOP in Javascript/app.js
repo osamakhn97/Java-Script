@@ -38,3 +38,58 @@ console.log(haris);
 haris.changeName("Haris Ali Khan");
 console.log(haris);
 
+// working with classes 
+
+class Employe{
+
+    constructor(name,age,gender){
+        this.name = name;
+        this.age = age,
+        this.gender = gender
+
+    }
+    
+    speak(){
+        console.log(`My name is ${this.name} and I am ${this.age} years old`)
+    }
+
+    static add (a,b){
+        console.log(a+b);
+    }
+};
+
+let Osama = new Employe("Haris",24);
+
+Osama.speak();
+
+Employe.add(5,6);
+
+// Working with inheritence 
+
+class WebDeveloper extends Employe{
+    constructor(name,age,gender,department){
+        super(name,age,gender);
+        this.department = department;
+    }
+
+    dep(){
+        console.log(`My name is ${this.name} , I am ${this.gender} , ${this.age} years old and 
+        my department is ${this.department}
+        
+        `)
+    }
+
+
+    static mul(a,b){
+        console.log(a*b);
+    }
+}
+
+let Ali = new WebDeveloper("Ali", 25 , "Male" , "Front End ");
+
+Ali.dep();
+
+WebDeveloper.mul(5,4);
+
+
+
